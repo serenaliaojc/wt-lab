@@ -46,3 +46,29 @@ console.log(today.getDate());
 console.log(today.getFullYear());
 // display today's date to page
 pTodayData.innerHTML = "Today is " + todayDayOfWeek + ", " + todayMonth + " " + today.getDate() + ", " + today.getFullYear();
+// part 2
+var inputDate = document.getElementById('input--date-picker');
+var btn = document.getElementById('button--birthday');
+var ouputMsg = document.getElementById('p--birthday-message');
+function birthdayOutput(bDay) {
+    var today = new Date();
+    var dateDiff = today.getDate() - bDay.getDate();
+    var monthDiff = today.getMonth() - bDay.getMonth();
+    if (dateDiff || monthDiff) {
+        return "Your birthday will be on " + days[bDay.getDay()] + ", " + months[bDay.getMonth()] + " " + bDay.getDate() + ", " + bDay.getFullYear() + ".";
+    }
+    else {
+        return "Happy Birthday";
+    }
+}
+btn.addEventListener("click", function () {
+    if (inputDate.value) {
+        var getBday = inputDate.value;
+        var bDay = new Date(getBday);
+        // console.log(bDay);
+        ouputMsg.innerHTML = birthdayOutput(bDay);
+    }
+    else {
+        ouputMsg.innerHTML = "Please select a date.";
+    }
+});
