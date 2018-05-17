@@ -57,7 +57,7 @@ let inputDate = document.getElementById('input--date-picker');
 let btn = document.getElementById('button--birthday');
 let ouputMsg = document.getElementById('p--birthday-message');
 
-function birthdayOutput(bDay) {
+function birthdayOutput(bDay:Date):string {
 	let today = new Date();
 	let dateDiff = today.getDate() - bDay.getDate();
 	let monthDiff = today.getMonth() - bDay.getMonth();
