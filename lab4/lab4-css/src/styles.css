@@ -1,9 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
-ul {
+ul.menu {
 	padding: 0;
 	margin: 0;
 }
-ul li {
+ul.menu li {
 	min-width: 80px;
 	display: block;
 	position: relative;
@@ -14,7 +14,7 @@ ul li {
 li ul {
 	display: none;
 }
-ul li a {
+ul.menu li a {
 	display: block;
 }
 
@@ -26,7 +26,7 @@ li:hover > ul {
 li:hover li {
 	float: none;
 }
-ul ul ul {
+ul.menu ul ul {
 	left: 100%;
 	top: 0;
 }
