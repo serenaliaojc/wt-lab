@@ -28,8 +28,22 @@ export class PeopleService {
     }
   ];
 
-  getPeople(): Observable<Person[]>{
-    return of(this.people);
+  getPeople(peopleOfInterest?: Person): Observable<Person[]>{
+    if (peopleOfInterest !== undefined) {
+      // return a list of people based on the given parameter peopleOfInterest
+      // filter results by first and last name
+      let peopleResults: Person[] = [];
+
+      for (let p of this.people) {
+        if (peopleOfInterest.firstName.toLowerCase() === p.firstName.toLowerCase()) {
+          peopleResults.push(p);
+        }
+        else if (peopleOfInterest.lastName.toLowerCase() === p.lastName.toLowerCase()) {
+          peopleResults.push(p);
+        }
+      }
+    }
+    return of(this.peopleResults);
   };
 
   constructor() { }

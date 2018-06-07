@@ -8,3 +8,16 @@
 		</li>
 	</ol>
 </div>
+<!-- <input [(ngModel)]="searchGuest.firstName">
+<div>
+	{{ searchGuest.firstName }}
+</div> -->
+<div>
+	<label for="">First Name:</label>
+	<input [(ngModel)]="searchGuest.firstName">
+</div>
+<div>
+	<label for="">Last Name:</label>
+	<input [(ngModel)]="searchGuest.lastName">
+</div>
+<button (click)="getPeople(searchGuest)">Search</button>
