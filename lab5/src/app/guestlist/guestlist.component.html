@@ -1,0 +1,10 @@
+<p>
+  guestlist works!
+</p>
+<div *ngIf="guests">
+	<ol>
+		<li *ngFor="let guest of guests">
+			{{ guest.firstName }} {{ guest.lastName }} ({{ guest.dateOfBirth }})
+		</li>
+	</ol>
+</div>
